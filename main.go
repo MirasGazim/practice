@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func Changename(mir []int) {
 	mir[1] = 12
 
@@ -59,41 +57,159 @@ func Changename(mir []int) {
 
 // }
 
-func longestCommonPrefix(slice []string) string {
-	var letter_of_slice string = ""
-	minSlice := slice[0]
-	for _, s := range slice {
-		if len(s) < len(minSlice) {
-			minSlice = s
-		}
-	}
+// func longestCommonPrefix(slice []string) string {
+// 	letter_of_slice := ""
 
-	if 1 <= len(slice) && len(slice) <= 200 && 0 <= len(minSlice) && len(minSlice) <= 200 {
-		for i := 0; i < len(minSlice); i++ {
-			if minSlice[i] >= 'A' && minSlice[i] <= 'Z' {
-				return ""
-			}
+// 	if 1 <= len(slice) && len(slice) <= 200 {
+// 		minSlice := slice[0]
+// 		for _, s := range slice {
+// 			if len(s) < len(minSlice) {
+// 				minSlice = s
+// 			}
+// 		}
 
-			for j := 0; j < len(minSlice); j++ {
-				slice_clone := slice[j]
-				if slice_clone[i] == minSlice[i] {
-					continue
-				} else {
-					return letter_of_slice
-				}
-			}
-			letter_of_slice += string(minSlice[i])
+// 		if 0 <= len(minSlice) && len(minSlice) <= 200 {
+// 			for i := 0; i < len(minSlice); i++ {
+// 				if minSlice[i] >= 'A' && minSlice[i] <= 'Z' {
+// 					return ""
+// 				}
 
-		}
-	} else {
-		return ""
-	}
+// 				for j := 0; j < len(slice); j++ { // <--- исправил здесь: len(slice), а не len(minSlice)
+// 					slice_clone := slice[j]
+// 					if slice_clone[i] == minSlice[i] {
+// 						continue
+// 					} else {
+// 						return letter_of_slice
+// 					}
+// 				}
 
-	return letter_of_slice
-}
+// 				letter_of_slice += string(minSlice[i])
+// 			}
+// 		} else {
+// 			return ""
+// 		}
+// 	}
 
+//		return letter_of_slice
+//	}
+// func isHappy(n int) bool {
+// 	var sum_of_slice int
+// 	slice2 := []int{n}
+// 	slice1 := []int{}
+// 	for true {
+// 		if n == 1 {
+// 			return true
+// 		}
+
+// 		for n > 0 {
+// 			slice1 = append([]int{n % 10}, slice1...)
+// 			n /= 10
+
+// 		}
+
+// 		for _, var_slice := range slice1 {
+// 			sum_of_slice += (var_slice * var_slice)
+// 		}
+
+// 		for i := 0; i < len(slice2); i++ {
+// 			if sum_of_slice == slice2[i] {
+// 				return false
+// 			}
+// 		}
+
+// 		slice2 = append(slice2, sum_of_slice)
+// 		slice1 = []int{}
+// 		n = sum_of_slice
+// 		sum_of_slice = 0
+// 	}
+// 	return true
+
+// }
+//
+//	func addDigits(num int) int {
+//		sum_of_slice_var := 0
+//		for true {
+//			slice1 := []int{}
+//			if 0 <= num && num < 10 {
+//				return num
+//			}
+//			for num > 0 {
+//				slice1 = append([]int{num % 10}, slice1...)
+//				num /= 10
+//			}
+//			for _, var_slice := range slice1 {
+//				sum_of_slice_var += (var_slice)
+//			}
+//			num = sum_of_slice_var
+//			sum_of_slice_var = 0
+//		}
+//		return num
+//	}
+
+//	func convertToTitle(columnNumber int) string {
+//		var (
+//			a int
+//			b int
+//		)
+//		alfabit := "AABCDEFGHIJKLMNOPQRSTUVWXYZ"
+//		if columnNumber <= 26 {
+//			return string(alfabit[columnNumber])
+//		} else {
+//			a = columnNumber / 26
+//			b = columnNumber % 26
+//		}
+//		return string(alfabit[a]) + string(alfabit[b])
+//	}
+//
+//	func isPowerOfTwo(n int) bool {
+//		for true {
+//			if n == 1 {
+//				return true
+//			}
+//			if n%2 != 0 {
+//				return false
+//			}
+//			n /= 2
+//		}
+//		return true
+//	}
+// func isUgly(n int) bool {
+// 	int1 := 2
+// 	int2 := 3
+// 	int3 := 5
+// 	slice := []int{n}
+// 	for true {
+// 		if n == 1 {
+// 			return true
+// 		}
+// 		if n%int1 == 0 {
+// 			n /= int1
+// 		}
+// 		if n%int2 == 0 {
+// 			n /= int2
+// 		}
+// 		if n%int3 == 0 {
+// 			n /= int3
+// 		}
+// 		for _, var_slice := range slice {
+// 			if n == var_slice {
+// 				return false
+// 			}
+// 		}
+// 		slice = append([]int{n}, slice...)
+
+//		}
+//		return true
+//	}
 func main() {
-	slice := []string{}
-	fmt.Println(longestCommonPrefix(slice))
-
+	slice := []int{0, 3, 5, 6, 4, 2}
+	for i := 0; i <= len(slice); i++ {
+		for j := 0; i < len(slice); j++ {
+			if i == slice[j] {
+				break
+			} else {
+				fmt.println(i)
+			}
+		}
+	}
 }
