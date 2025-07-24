@@ -1,9 +1,14 @@
 package main
 
-func Changename(mir []int) {
-	mir[1] = 12
+import (
+	"fmt"
+	"reflect"
+)
 
-}
+// func Changename(mir []int) {
+// 	mir[1] = 12
+
+// }
 
 // func plusOne(digits []int) []int {
 // 	for i := len(digits) - 1; i >= 0; i-- {
@@ -201,15 +206,147 @@ func Changename(mir []int) {
 //		}
 //		return true
 //	}
+
+// func missingNumber(nums []int) int {
+// 	sumExpected, sumActual := 0, 0
+// 	for i := 0; i <= len(nums); i++ {
+// 		sumExpected += i
+// 	}
+// 	for _, var_of_slice := range nums {
+// 		sumActual += var_of_slice
+// 	}
+// 	sumExpected -= sumActual
+// 	return sumExpected
+// }
+
+// func isPowerOfThree(n int) bool {
+// 	if n < 1 {
+// 		return false
+// 	}
+
+// 	for n%3 == 0 {
+// 		n /= 3
+// 	}
+
+//		return n == 1
+//	}
+// func checkPerfectNumber(num int) bool {
+// 	sum_of_slice := 1
+// 	if num == 1 {
+// 		return false
+// 	}
+// 	for i := 2; i*i <= num; i++ {
+// 		if num%i == 0 {
+// 			sum_of_slice += i
+// 			if i != num/i {
+// 				sum_of_slice += num / i
+// 			}
+// 		}
+// 	}
+// 	return sum_of_slice == num
+// }
+
+// func fib(n int) int {
+// 	sum_fibo := 0
+// 	var sum1 int = 0
+// 	var sum2 int = 1
+// 	if n == 0 {
+// 		return 0
+// 	}
+// 	if n == 1 {
+// 		return 0
+// 	}
+// 	if 0 <= n && n <= 30 {
+// 		for i := 2; i < n; i++ {
+// 			sum_fibo = sum1 + sum2
+// 			sum1 = sum2
+// 			sum2 = sum_fibo
+// 		}
+// 	}
+// 	return sum1 + sum2
+// }
+
+// func selfDividingNumbers(left int, right int) []int {
+// 	slice := []int{}
+// 	var_of_slice := []int{}
+// 	if 1 <= left && left <= right {
+// 		for i := left; i <= right; i++ {
+// 			isValid := true
+// 			lens := i
+// 			for lens > 0 {
+// 				var_of_slice = append([]int{lens % 10}, var_of_slice...)
+// 				lens /= 10
+// 			}
+// 			for _, digit := range var_of_slice {
+// 				if digit == 0 || i % digit != 0{
+// 					isValid = false
+// 					break
+// 				}
+// 			}
+// 			if isValid {
+// 				slice = append(slice, i)
+// 			}
+// 			var_of_slice = []int{}
+// 		}
+// 	}
+// 	return slice
+// }
+
+// func maximumProduct(nums []int) []int {
+// 	// if len(nums) == 3 {
+// 	// 	return nums[0] * nums[1] * nums[2]
+// 	// }
+// 	for i := 0; i < len(nums); i++ {
+// 		j := i + 1
+// 		if j < len(nums) && nums[i] > nums[j] {
+// 			carry := nums[i]
+// 			nums[i] = nums[j]
+// 			nums[j] = carry
+// 		}
+// 	}
+// 	return nums
+// }
+
+// func isAnagram(s string, t string) bool {
+// 	sum_1 := make([]int, 26)
+// 	for _, var_1 := range s {
+// 		sum_1[int(var_1)-'a']++
+// 	}
+// 	for _, var_1 := range t {
+// 		sum_1[int(var_1)-'a']--
+// 	}
+// 	for _, v := range sum_1 {
+// 		if v != 0 {
+// 			return false
+// 		}
+// 	}
+// 	return true
+// }
+
+// func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+// 	list1
+// 	list2
+// }
+
+// func subtractProductAndSum(n int) int {
+// 	if 0 >= n {
+// 		return 0
+// 	}
+// 	sum, multiplication := 0, 1
+// 	for n > 0 {
+// 		multiplication *= (n % 10)
+// 		sum += n % 10
+// 		n /= 10
+// 	}
+// 	return multiplication - sum
+// }
+
 func main() {
-	slice := []int{0, 3, 5, 6, 4, 2}
-	for i := 0; i <= len(slice); i++ {
-		for j := 0; i < len(slice); j++ {
-			if i == slice[j] {
-				break
-			} else {
-				fmt.println(i)
-			}
-		}
+	p := map[string]int{
+		"miras": 12,
+		"dias":  34,
 	}
+	v := reflect.ValueOf(p)
+	fmt.Println(v.Type())
+	fmt.Println(v.Kind())
 }
